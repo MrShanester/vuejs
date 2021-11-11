@@ -1,0 +1,37 @@
+
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Practice Vue.js</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="index.js" defer></script>
+</head>
+<body>
+  <h1>Hello from HTML!</h1>
+  <div id="app">
+    <h1>{{ message }}</h1>
+    <div v-for="movie in movies">
+    <p>{{ movie.title }}</p>
+      <div v-if="movie.title.includes('Zoolander')">
+        <img src="https://i.ibb.co/59C7PD9/zoolander.jpg" width=350px height=350px alt="">
+      </div>
+    </div>
+   
+
+    <h2>Add a product:</h2>
+      <p>Title:</p>
+      <input type="string" v-model="movieParams.title">
+      <p>Year:</p>
+      <input type="integer" v-model="movieParams.year">
+      <p>Plot:</p>
+      <input type="string" v-model="movieParams.plot">
+      <p>Engilsh?</p>
+      <input type="boolean" v-model="movieParams.english">
+      <p></p>
+      <button v-on:click="createMovie()">Create New Movie</button>
+  </div>
+</body>
+</html>
